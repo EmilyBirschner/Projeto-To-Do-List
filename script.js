@@ -22,9 +22,10 @@ function addTask() {
     inputBox.value = "";
     saveData();
 }
-/*evento para sempre que clicar no container com as tarefas ele verifica onde foi o click
-e adiciona uma classe ao elemento, se o elemento estiver lista, ele marca como 'checado', se o click for no 'x' (elemento span), ele deleta o elemento pai, ou seja, o elemento que estava na lista)*/
-
+/**
+ * Evento para sempre que clicar no container com as tarefas ele verifica onde foi o click
+   e adiciona uma classe ao elemento, se o elemento estiver lista, ele marca como 'checado', se o click for no 'x' (elemento span), ele deleta o elemento pai, ou seja, o elemento que estava na lista)
+*/
 listContainer.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
