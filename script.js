@@ -37,6 +37,27 @@ listContainer.addEventListener("click", function (e) {
 }, false)
 
 /**
+ * Evento para adicionar uma tarefa quando "Enter" é pressionado no teclado
+ */
+window.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+        if (inputBox.value === '') {
+            alert("Você deve escrever algo!");
+        }
+        else {
+            let li = document.createElement("li");
+            li.innerHTML = inputBox.value;
+            listContainer.appendChild(li);
+            let span = document.createElement("span");
+            span.innerHTML = "\u00d7";
+            li.appendChild(span);
+        }
+        inputBox.value = "";
+        saveData();
+    }
+})
+
+/**
  * Função para salvar os dados no browser. Ao atualizar o site, não perde os dados.
  */
 function saveData() {
